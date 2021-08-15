@@ -1,13 +1,9 @@
-def stock_picker(stock_price)
-  stock_price.pop if stock_price.index(stock_price.min) == stock_price.length-1
-  stock_price.shift if stock_price.index(stock_price.max) == 0
+def stock_picker(stock_prices)
+  buy_sell = []
 
-  stock_price.delete_if do |price|
-    stock_price.index(price) > stock_price.index(stock_price.max)
-  end
 
-  return stock_price.minmax
+  return buy_sell
 
 end
 
-p stock_picker([17,3,6,9,15,8,6,10,1])
+p stock_picker([17,16,3,6,9,15,8,6,1,10])
